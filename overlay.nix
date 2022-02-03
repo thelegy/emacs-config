@@ -1,11 +1,5 @@
 final: prev: {
 
-  emacsPgtk = (final.emacs.override {
-    withPgtk = false;
-  }).overrideAttrs (old: {
-    configureFlags = final.lib.remove "--with-xft" old.configureFlags;
-  });
-
   emacsPackagesFor = emacs: (prev.emacsPackagesFor emacs).overrideScope' (
     efinal: eprev: eprev // {
 
@@ -14,7 +8,9 @@ final: prev: {
     }
   );
 
-  emacs-thelegy = (final.emacsPackagesFor final.emacsPgtk).withPackages (p: [ p.config-thelegy ]);
-  emacs-thelegy-nox = (final.emacsPackagesFor final.emacs-nox).withPackages (p: [ p.config-thelegy ]);
+  emacsGcc-nox = final.emacsGit-nox.override { nativeComp = true; };
+
+  emacs-thelegy = (final.emacsPackagesFor final.emacsPgtkGcc).withPackages (p: [ p.config-thelegy ]);
+  emacs-thelegy-nox = (final.emacsPackagesFor final.emacsGcc-nox).withPackages (p: [ p.config-thelegy ]);
 
 }
