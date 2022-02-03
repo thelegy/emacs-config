@@ -1,0 +1,40 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "narHash": "sha256-O0tyXF//ppRpe9yT1Uu5n34yI2MWDyY6ZiJ4Qn5zIkE=",
+        "path": "/nix/store/0gwjpjvi1gjma5d8cdpbxq8pxacnjs6r-source",
+        "type": "path"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "wat": "wat"
+      }
+    },
+    "wat": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1641613028,
+        "narHash": "sha256-GOYfvxTPbjLTttU774otmdSe1sXNCzVnDP48Uxrgrco=",
+        "owner": "thelegy",
+        "repo": "wat",
+        "rev": "54810913319f3687e3e762cca4b074ac96183ea6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "thelegy",
+        "repo": "wat",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
